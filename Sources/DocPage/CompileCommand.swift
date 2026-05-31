@@ -50,6 +50,7 @@ struct CompileCommand: ParsableCommand {
         try FileManager.default.copyItem(at: inputFileURL, to: templateURL.appending(path: "Sources/Template/Documentation.docc/Documentation.md"))
         
         print("Template Made🎉")
+        print()
         print("Compiling your documentation...")
         // Compile DocC
         guard let swift = Command.findInPath(withName: "swift") else {
@@ -62,6 +63,7 @@ struct CompileCommand: ParsableCommand {
         }
         
         print("Documentation Built 🎉")
+        print()
         print("Extracting your JSON file...")
         
         // Extract File
@@ -69,11 +71,11 @@ struct CompileCommand: ParsableCommand {
         let outputURL = if let outputPath {
             URL(filePath: NSString(string: outputPath).expandingTildeInPath)
         } else {
-            URL(filePath: inputFileURL.lastPathComponent)
+            URL(filePath: inputFileURL.deletingPathExtension().lastPathComponent.appending(".json"))
         }
         try FileManager.default.copyItem(at: jsonURL, to: outputURL)
         
-        print("Cleaning Up 🧹")
+        print("Cleaning Up...")
         try FileManager.default.removeItem(at: templateURL)
         print("Done! 🎉")
         print("Generated json at \(outputURL.path)")
