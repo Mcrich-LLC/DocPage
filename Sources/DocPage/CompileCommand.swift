@@ -127,7 +127,7 @@ struct CompileCommand: AsyncParsableCommand {
         let articleReaderAppURL = DocPage.configDir.appending(path: "DocC Article Viewer.app")
         if !FileManager.default.fileExists(atPath: articleReaderAppURL.path(percentEncoded: false)) {
             print("Article Viewer not found, downloading...")
-            let zipURL = ProcessInfo.processInfo.environment["PREVIEW_ZIP_URL"] ?? "https://github.com/Mcrich-LLC/docpage/releases/download/latest/article-preview.zip"
+            let zipURL = ProcessInfo.processInfo.environment["PREVIEW_ZIP_URL"] ?? "https://github.com/Mcrich-LLC/DocPage/releases/latest/downloadarticle-preview.zip"
             guard let zipURL = URL(string: zipURL) else {
                 throw URLError(.badURL)
             }
