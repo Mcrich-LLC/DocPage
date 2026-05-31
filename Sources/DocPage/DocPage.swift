@@ -7,8 +7,12 @@
 import ArgumentParser
 
 @main
-struct DocPage: ParsableCommand {
-    mutating func run() throws {
-        print("Hello, world!")
-    }
+struct DocPage: AsyncParsableCommand {
+    static let configuration: CommandConfiguration = .init(
+        commandName: "doc-page",
+        abstract: "Generate a single page of documentation",
+        subcommands: [
+            CompileCommand.self
+        ]
+    )
 }
