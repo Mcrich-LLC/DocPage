@@ -16,6 +16,15 @@ away.
 
 - Swift 6.0 or newer
 
+## Install
+
+Install DocPage with Homebrew:
+
+```sh
+brew tap Mcrich-LLC/formulae
+brew install docpage
+```
+
 ## Building
 
 DocPage is a Swift package. From the project folder, build it with:
