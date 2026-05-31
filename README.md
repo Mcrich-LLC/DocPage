@@ -63,14 +63,9 @@ DocPage downloads the article viewer into `~/.docpage`.
 ## Using The Output
 
 DocPage produces a single DocC article JSON file. You can use that file anywhere
-that expects DocC article data.
+that expects DocCa article data.
 
-That makes DocPage useful for:
-
-- previewing one-off documentation pages
-- building small docs pages without setting up a full DocC archive
-- checking how Markdown turns into DocC article data
-- testing DocC article renderers, including DocCKit
+That makes DocPage useful for producing one-off documentation pages, remote content for apps (ie. What's New), etc.
 
 If your article includes attached resources, especially images or other media,
 use remote URLs when you plan to deploy the generated JSON. Local file paths may
