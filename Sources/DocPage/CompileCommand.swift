@@ -73,6 +73,7 @@ struct CompileCommand: ParsableCommand {
         } else {
             URL(filePath: inputFileURL.deletingPathExtension().lastPathComponent.appending(".json"))
         }
+        try? FileManager.default.removeItem(at: outputURL)
         try FileManager.default.copyItem(at: jsonURL, to: outputURL)
         
         print("Cleaning Up...")
