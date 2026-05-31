@@ -84,13 +84,6 @@
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "PREVIEW_ZIP_URL"
-            value = "file:///Users/mcrich/Downloads/Article%20Viewer%202026-05-30%2018-09-59/DocC%20Article%20Viewer.zip"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
