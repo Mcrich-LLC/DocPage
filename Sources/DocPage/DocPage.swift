@@ -9,7 +9,7 @@ import ArgumentParser
 @main
 struct DocPage: AsyncParsableCommand {
     static let configuration: CommandConfiguration = .init(
-        commandName: "doc-page",
+        commandName: "docpage",
         abstract: "Generate a single page of documentation",
         subcommands: [
             CompileCommand.self
