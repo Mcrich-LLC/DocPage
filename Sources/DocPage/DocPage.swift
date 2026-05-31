@@ -5,6 +5,7 @@
 // https://swiftpackageindex.com/apple/swift-argument-parser/documentation
 
 import ArgumentParser
+import Foundation
 
 @main
 struct DocPage: AsyncParsableCommand {
@@ -15,4 +16,5 @@ struct DocPage: AsyncParsableCommand {
             CompileCommand.self
         ]
     )
+    static let configDir = URL.homeDirectory.appending(path: ".docpage")
 }

@@ -8,6 +8,7 @@
 import Foundation
 import ArgumentParser
 import SwiftCommand
+import ZIPFoundation
 
 enum RunErrors: LocalizedError {
     case swiftNotFound
@@ -26,7 +27,7 @@ enum RunErrors: LocalizedError {
     }
 }
 
-struct CompileCommand: ParsableCommand {
+struct CompileCommand: AsyncParsableCommand {
     static let configuration: CommandConfiguration = .init(
         commandName: "compile",
         abstract: "Compiles your markdown file into a DocC json file"
@@ -37,7 +38,16 @@ struct CompileCommand: ParsableCommand {
     @Option(name: [.short, .customLong("output")], help: "The path to the output your file")
     var outputPath: String?
     
-    func run() throws {
+    @Flag(name: .long, help: "Use this to automatically open a preview after compilation")
+    var preview: Bool = false
+    
+    func run() async throws {
+        #if !os(macOS)
+        guard !preview else {
+            throw ValidationError("Preview is only available on macOS")
+        }
+        #endif
+        
         let inputFileURL = URL(filePath: path)
         guard inputFileURL.pathExtension.lowercased() == "md" else {
             throw ValidationError("File must be a markdown file")
@@ -78,8 +88,16 @@ struct CompileCommand: ParsableCommand {
         
         print("Cleaning Up...")
         try FileManager.default.removeItem(at: templateURL)
-        print("Done! 🎉")
+        if !preview {
+            print("Done! 🎉")
+        }
         print("Generated json at \(outputURL.path)")
+        
+        if preview {
+            print()
+            print("Starting Preview...")
+            try await openPreview(for: outputURL)
+        }
     }
     
     /// Makes a DocPage template in a temporary directory.'
@@ -103,6 +121,35 @@ struct CompileCommand: ParsableCommand {
         try FileManager.default.createDirectory(at: docCArchiveURL, withIntermediateDirectories: true)
         
         return tmpURL
+    }
+    
+    private func openPreview(for json: URL) async throws {
+        let articleReaderAppURL = DocPage.configDir.appending(path: "DocC Article Viewer.app")
+        if !FileManager.default.fileExists(atPath: articleReaderAppURL.path(percentEncoded: false)) {
+            print("Article Viewer not found, downloading...")
+            let zipURL = ProcessInfo.processInfo.environment["PREVIEW_ZIP_URL"] ?? "https://github.com/Mcrich-LLC/docpage/releases/download/latest/article-preview"
+            guard let zipURL = URL(string: zipURL) else {
+                throw URLError(.badURL)
+            }
+            let zipFileURL = DocPage.configDir.appending(path: "article-preview.zip")
+            
+            let (data, _) = try await URLSession.shared.data(from: zipURL)
+            
+            try? FileManager.default.createDirectory(at: DocPage.configDir, withIntermediateDirectories: true)
+            try data.write(to: zipFileURL)
+            
+            try FileManager.default.unzipItem(at: zipFileURL, to: articleReaderAppURL.deletingLastPathComponent())
+            print("Download complete 🎉")
+            print("")
+        } else {
+            print("Article Viewer found")
+        }
+        
+        print("Opening preview for: \(json.lastPathComponent)")
+        let app = Command(executablePath: .init(articleReaderAppURL.appending(path: "Contents/MacOS/DocC Article Viewer").path(percentEncoded: false)))
+            .addArguments(["--preview", json.absoluteString])
+        
+        _ = try app.spawn()
     }
 }
 

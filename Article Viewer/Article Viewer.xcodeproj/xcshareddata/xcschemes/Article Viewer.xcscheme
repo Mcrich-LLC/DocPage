@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "227FE0242FCBB38000DEFD6D"
-               BuildableName = "Article Viewer.app"
-               BlueprintName = "Article Viewer"
+               BuildableName = "DocC Article Viewer.app"
+               BlueprintName = "DocC Article Viewer"
                ReferencedContainer = "container:Article Viewer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "227FE0242FCBB38000DEFD6D"
-            BuildableName = "Article Viewer.app"
-            BlueprintName = "Article Viewer"
+            BuildableName = "DocC Article Viewer.app"
+            BlueprintName = "DocC Article Viewer"
             ReferencedContainer = "container:Article Viewer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "227FE0242FCBB38000DEFD6D"
-            BuildableName = "Article Viewer.app"
-            BlueprintName = "Article Viewer"
+            BuildableName = "DocC Article Viewer.app"
+            BlueprintName = "DocC Article Viewer"
             ReferencedContainer = "container:Article Viewer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

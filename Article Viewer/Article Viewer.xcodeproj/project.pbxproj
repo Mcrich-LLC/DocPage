@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		227FE0252FCBB38000DEFD6D /* Article Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227FE0252FCBB38000DEFD6D /* DocC Article Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocC Article Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		227FE0262FCBB38000DEFD6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				227FE0252FCBB38000DEFD6D /* Article Viewer.app */,
+				227FE0252FCBB38000DEFD6D /* DocC Article Viewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,9 +53,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		227FE0242FCBB38000DEFD6D /* Article Viewer */ = {
+		227FE0242FCBB38000DEFD6D /* DocC Article Viewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 227FE0302FCBB38200DEFD6D /* Build configuration list for PBXNativeTarget "Article Viewer" */;
+			buildConfigurationList = 227FE0302FCBB38200DEFD6D /* Build configuration list for PBXNativeTarget "DocC Article Viewer" */;
 			buildPhases = (
 				227FE0212FCBB38000DEFD6D /* Sources */,
 				227FE0222FCBB38000DEFD6D /* Frameworks */,
@@ -68,12 +68,12 @@
 			fileSystemSynchronizedGroups = (
 				227FE0272FCBB38000DEFD6D /* Article Viewer */,
 			);
-			name = "Article Viewer";
+			name = "DocC Article Viewer";
 			packageProductDependencies = (
 				227FE0392FCBB85500DEFD6D /* DocCKit */,
 			);
 			productName = "DocCKit-Test";
-			productReference = 227FE0252FCBB38000DEFD6D /* Article Viewer.app */;
+			productReference = 227FE0252FCBB38000DEFD6D /* DocC Article Viewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				227FE0242FCBB38000DEFD6D /* Article Viewer */,
+				227FE0242FCBB38000DEFD6D /* DocC Article Viewer */,
 			);
 		};
 /* End PBXProject section */
@@ -328,7 +328,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		227FE0302FCBB38200DEFD6D /* Build configuration list for PBXNativeTarget "Article Viewer" */ = {
+		227FE0302FCBB38200DEFD6D /* Build configuration list for PBXNativeTarget "DocC Article Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				227FE0312FCBB38200DEFD6D /* Debug */,
