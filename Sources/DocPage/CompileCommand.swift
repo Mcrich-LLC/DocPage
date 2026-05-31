@@ -43,11 +43,14 @@ struct CompileCommand: ParsableCommand {
             throw ValidationError("File must be a markdown file")
         }
         
+        print("Creating Template...")
         let templateURL = try makeTemplate()
         
         // Copy markdown file into template directory
         try FileManager.default.copyItem(at: inputFileURL, to: templateURL.appending(path: "Sources/Template/Documentation.docc/Documentation.md"))
         
+        print("Template Made🎉")
+        print("Compiling your documentation...")
         // Compile DocC
         guard let swift = Command.findInPath(withName: "swift") else {
             throw RunErrors.swiftNotFound
