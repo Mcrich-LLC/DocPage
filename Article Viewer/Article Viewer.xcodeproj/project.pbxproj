@@ -101,7 +101,7 @@
 			mainGroup = 227FE01C2FCBB38000DEFD6D;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				227FE0432FCBB9F700DEFD6D /* XCRemoteSwiftPackageReference "DocCKit" */,
+				227FE0432FCBB9F700DEFD6D /* XCRemoteSwiftPackageReference "DocB" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 227FE0262FCBB38000DEFD6D /* Products */;
@@ -340,9 +340,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		227FE0432FCBB9F700DEFD6D /* XCRemoteSwiftPackageReference "DocCKit" */ = {
+		227FE0432FCBB9F700DEFD6D /* XCRemoteSwiftPackageReference "DocB" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Mcrich-LLC/DocCKit";
+			repositoryURL = "https://github.com/Mcrich-LLC/DocB.git";
 			requirement = {
 				branch = main;
 				kind = branch;

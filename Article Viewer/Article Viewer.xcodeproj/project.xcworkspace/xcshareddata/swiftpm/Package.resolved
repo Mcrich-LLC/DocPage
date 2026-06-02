@@ -1,13 +1,13 @@
 {
-  "originHash" : "29ba9abce3babc30791fb3a10604a6334d66102cdf37108513e490480770118b",
+  "originHash" : "3a0a2e70fdacb95a4d58ea448a2c9d0f8fa4797ecf87eb9273613e740af83946",
   "pins" : [
     {
-      "identity" : "docckit",
+      "identity" : "docb",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Mcrich-LLC/DocCKit",
+      "location" : "https://github.com/Mcrich-LLC/DocB.git",
       "state" : {
         "branch" : "main",
-        "revision" : "b76910a5a0fb3c7716bd909d54594e30f11e5174"
+        "revision" : "3c835eaca1b1e03c280b1874b791cf4481b47238"
       }
     },
     {
@@ -20,12 +20,30 @@
       }
     },
     {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "revision" : "b32dc7a813c2da6b3c3618df12534b1d85c6aa78",
+        "version" : "3.0.5"
+      }
+    },
+    {
       "identity" : "highlightswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appstefan/HighlightSwift",
       "state" : {
         "revision" : "784ca3ccfc8a2cf724fbb2f06cb6ec3329424da3",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "mycloudkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mufasaYC/MYCloudKit.git",
+      "state" : {
+        "branch" : "feat/codable-record-value",
+        "revision" : "f5db0d00f0e6eec48bb3c3522448b5bf3f391abf"
       }
     },
     {
@@ -44,6 +62,15 @@
       "state" : {
         "revision" : "e01b3d4f861412f8dcee8d93c417d2c2b0cdfd77",
         "version" : "7.0.0"
+      }
+    },
+    {
+      "identity" : "sfsymbols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonbs/SFSymbols",
+      "state" : {
+        "revision" : "07c59068c52fb52c3a3223310a003b4ccd2a7a78",
+        "version" : "1.5.0"
       }
     },
     {
